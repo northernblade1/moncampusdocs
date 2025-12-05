@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon premier exercice du TP3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header img {
+            width: 100%;
+            display: block;
+        }
+        main {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        aside {
+            width: 25%;
+            background-color: #EEEEEE;
+            padding: 20px;
+        }
+        aside ul {
+            list-style: none;
+            padding: 0;
+        }
+        aside ul li {
+            margin-bottom: 10px;
+        }
+        aside ul li a {
+            text-decoration: none;
+            color: #003569;
+            font-weight: bold;
+        }
+        aside ul li a:hover {
+            color: #EE6600;
+        }
+        section {
+            width: 75%;
+            padding: 20px;
+        }
+        section h2 {
+            color: #003569;
+            font-size: 1.8rem;
+        }
+        section p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+        section b {
+            color: #EE6600;
+        }
+        footer {
+            background-color: #EE6600;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/banniere.jpg" alt="Bannière du site" title="Mon premier exercice du TP3">
+    </header>
+    <main>
+        <aside>
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="presentation.html">Présentation</a></li>
+                <li><a href="activites.html">Activités</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </aside>
+        <section>
+            <h2>Exercice</h2>
+            <p>
+                Cet exercice permet de mettre en pratique les balises que nous avons vues jusqu'ici. <br>
+                Les possibilités de mise en évidence du design sont limitées ! Il reste encore du chemin à faire 
+                avant de réussir une page Web avec un design <b>agréable</b>.
+            </p>
+        </section>
+    </main>
+    <footer>
+        Cours Programmation Web &copy; 2024
+    </footer>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice : Événements JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #ddd;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .box:hover {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Événements JavaScript</h1>
+
+    <button class="btn" id="colorButton">Cliquez-moi !</button>
+    <p id="colorText">Couleur actuelle : Verte</p>
+
+    <br>
+
+    <input type="text" id="focusInput" placeholder="Entrez un texte" />
+    <p id="focusMessage" style="color: blue;"></p>
+
+    <div class="box" id="hoverBox">
+        Passez la souris ici
+    </div>
+    <p id="coordinates"></p>
+
+    <script>
+        // Changement de couleur du bouton
+        const colorButton = document.getElementById('colorButton');
+        const colorText = document.getElementById('colorText');
+        let colors = ['#4CAF50', '#FF5733', '#33C3FF', '#FFC300'];
+        var index = 0;
+        let currentColorIndex = 0;
+
+        colorButton.addEventListener('click', function () {
+            currentColorIndex = (currentColorIndex + 1) % colors.length;
+            const newColor = colors[index];
+            index++;
+
+            if(index == 3){
+                index = 0;
+            }
+            colorButton.style.backgroundColor = newColor;
+            colorText.innerHTML = `Couleur actuelle : ${newColor}`;
+        });
+
+        // Message quand l'input perd le focus
+        const focusInput = document.getElementById('focusInput');
+        const focusMessage = document.getElementById('focusMessage');
+
+        focusInput.addEventListener('blur', function () {
+            if (focusInput.value.trim() === '') {
+                focusMessage.innerHTML = "Veuillez entrer un texte.";
+            } else {
+                focusMessage.innerHTML = `Vous avez saisi : ${focusInput.value}`;
+            }
+        });
+
+        // Coordonnées de la souris sur la boîte
+        const hoverBox = document.getElementById('hoverBox');
+        const coordinates = document.getElementById('coordinates');
+
+        hoverBox.addEventListener('mousemove', function (event) {
+            const x = event.offsetX;
+            const y = event.offsetY;
+            coordinates.innerHTML = `Coordonnées dans la boîte : X=${x}, Y=${y}`;
+        });
+
+        hoverBox.addEventListener('mouseleave', function () {
+            coordinates.innerHTML = '';
+        });
+    </script>
+</body>
+</html>

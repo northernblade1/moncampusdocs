@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entreprise XYZ - Services Innovants</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Importation de police personnalisée */
+        @font-face {
+            font-family: 'Lora';
+            src: url('fonts/Lora-Regular.ttf') format('truetype');
+        }
+
+        /* Styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            background-color: #f4f4f4;
+        }
+
+        /* Header */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .navbar .nav-links {
+            list-style: none;
+        }
+
+        .navbar .nav-links li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        .navbar .nav-links li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .navbar .nav-links li a:hover {
+            color: #ffeb3b;
+        }
+
+        /* Section Accueil */
+        .home {
+            background-image: url('https://media.istockphoto.com/id/2154744783/fr/photo/abstract-red-blue-background-vortex-technological-concept.webp?b=1&s=612x612&w=0&k=20&c=KnYUw2lVOw4lmJyjumxKcUDxfvjmz4U4rQ1izycSdZk=');
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .home .content h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .home .btn {
+            display: inline-block;
+            padding: 10px 30px;
+            background-color: #ffeb3b;
+            color: #333;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .home .btn:hover {
+            background-color: #333;
+            color: #ffeb3b;
+        }
+
+        /* Section Services */
+        .services {
+            padding: 80px 20px;
+            background-color: #fff;
+        }
+
+        .services .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 40px;
+        }
+
+        /* Image de service alignée à gauche */
+        .service-img {
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+
+        /* Conteneur de texte à droite */
+        .service-text {
+            flex: 1;
+            margin: 10px;
+        }
+
+        /* Titre et paragraphe */
+        .service-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .service-text p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .service-card {
+            display: flex;
+            align-items: flex-start;
+            padding: 20px;
+            background-color: #f9f9f9;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        /* Section À Propos */
+        .about {
+            padding: 80px 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        /* Section Contact */
+        .contact {
+            padding: 80px 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .contact h2 {
+            text-align: center;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .contact .btn {
+            background-color: #ffeb3b;
+            color: #333;
+            font-weight: bold;
+            padding: 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact .btn:hover {
+            background-color: #fff;
+            color: #333;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            color: #fff;
+        }
+
+        /* Style de base pour les articles de services */
+        .service-card {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .service-card img {
+            width: 150px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .service-text {
+            flex: 1;
+        }
+
+        /* Media query pour écrans étroits */
+        @media (max-width: 768px) {
+            .service-card {
+                flex-direction: column; /* Les éléments sont empilés verticalement */
+                align-items: flex-start;
+            }
+
+            .service-card img {
+                width: 100%; /* L'image occupe 100% de la largeur */
+                margin: 0 0 10px 0; /* Espacement en bas uniquement */
+            }
+
+            .service-text {
+                width: 100%; /* Le texte prend également toute la largeur */
+            }
+        }
+
+
+
+        /*------------*/
+        /* Style par défaut de la navigation */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            margin: 0 10px;
+            color: black;
+            font-weight: bold;
+        }
+
+        /* Icône du menu - cachée par défaut */
+        .menu-icon {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Media query pour petits écrans */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Cache le menu par défaut */
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                padding: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .active {
+                display: flex; /* Affiche le menu lorsqu'il est actif */
+                /* background-color: #333; */
+            }
+
+            .menu-icon {
+                display: block; /* Affiche l'icône menu */
+                color: white;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header id="header">
+        <nav class="navbar">
+            <a href="#home" class="logo">XYZ</a>
+            <button class="menu-icon" id="menu-icon"><i class="fa-solid fa-bars"></i></button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">À Propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section Accueil -->
+    <section id="home" class="section home">
+        <div class="content">
+            <h1>Bienvenue chez Entreprise XYZ</h1>
+            <p>Nous construisons des solutions innovantes pour votre succès.</p>
+            <a href="#services" class="btn">Découvrez nos services</a>
+        </div>
+    </section>
+
+    <!-- Section Services -->
+    <section id="services" class="section services">
+        
+        <h2>Nos Services</h2>
+        
+        <article class="service-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmkuO-nf2PUCGg4f6PTwbFiYVrJN8WcWzFZqfmRBLtx3nxsmOlRqmNZSfqfa_53OdwUu4&usqp=CAU" align="left" width="150">
+            <div class="service-text">
+                <h3>Consultation Stratégique</h3>
+                <p>Des conseils personnalisés pour booster votre croissance.</p>
+            </div>
+        </article>
+        <article class="service-card">
+            <div class="service-text">
+                <h3>Développement Web</h3>
+                <p>Des sites web modernes et performants adaptés à tous les appareils.</p>
+            </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqyE3edw5NFnYotGACo39quwErx2Ljmx5h1A&s" alt="Service 1" align="right" width="150">
+        </article>
+        <article class="service-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPm6rCZC7Xl0LLK0IaPt6R6a4oeeMl7cDb9sftObkWbhK9lazWxtyKh_2NByIm50L_pcs&usqp=CAU" alt="Service 1" align="left" width="150">
+            <div class="service-text">
+                <h3>Marketing Digital</h3>
+                <p>Des stratégies sur mesure pour maximiser votre visibilité en ligne.</p>
+            </div>
+        </article>
+    </section>
+
+    <!-- Section À Propos -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2>À Propos de Nous</h2>
+            <p>Chez XYZ, nous sommes passionnés par l'innovation et le succès de nos clients.</p>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2>Contactez-Nous</h2>
+            <form>
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit" class="btn">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Entreprise XYZ. Tous droits réservés.</p>
+    </footer>
+
+    <script type="text/javascript">
+        const menuIcon = document.getElementById('menu-icon');
+        const navLinks = document.getElementById('nav-links');
+
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
+
+</body>
+</html>

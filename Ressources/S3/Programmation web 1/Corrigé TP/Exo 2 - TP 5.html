@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajout d'un étudiant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header img {
+            max-width: 150px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        form fieldset {
+            border: 1px solid #007bff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        form legend {
+            font-weight: bold;
+            color: #007bff;
+            font-size: 1.4rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        input[type="text"], input[type="number"], input[type="date"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+        }
+        
+
+        
+        input:invalid {
+            border: 2px solid red;
+        }
+        input:invalid::placeholder {
+            color: red;
+            font-style: italic;
+        }
+        input:valid {
+            border: 2px solid green;
+        }
+        input:invalid:focus {
+            outline: none;
+            box-shadow: 0 0 5px red;
+        }
+        input:valid:focus {
+            outline: none;
+            box-shadow: 0 0 5px green;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/logo.jpg" alt="Logo de mon blog" width="10%">
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="ajouter.html">Ajouter un étudiant</a></li>
+                <li><a href="liste.html">Liste des étudiants</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <form>
+                <fieldset>
+                    <legend>Informations de l'étudiant</legend>
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom" required>
+
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" name="prenom" required>
+
+                    <label for="age">Âge :</label>
+                    <input type="number" id="age" name="age" min="0" max="100" required>
+
+                    <label for="classe">Classe :</label>
+                    <input type="text" id="classe" name="classe" required>
+
+                    <label for="date-inscription">Date d'inscription :</label>
+                    <input type="date" id="date-inscription" name="date-inscription" required>
+
+                    <input type="submit" value="Ajouter">
+                </fieldset>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 - Gestion des étudiants</p>
+    </footer>
+</body>
+</html>

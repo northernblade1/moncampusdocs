@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .results {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e8f5e9;
+            border-left: 5px solid #4CAF50;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            margin: 10px 0;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gestion des Notes</h1>
+    <div class="container">
+        <p>Entrez des notes entre 0 et 20 dans le champ ci-dessous. Cliquez sur "Ajouter la note" pour enregistrer chaque note. Une fois terminé, cliquez sur "Afficher les résultats".</p>
+        <input type="number" id="noteInput" placeholder="Entrez une note" title="Veuillez entrer une note valide entre 0 et 20."/>
+        <button class="btn" onclick="ajouterNote()">Ajouter la note</button>
+        <button class="btn" onclick="afficherResultats()">Afficher les résultats</button>
+        <p id="error" class="error-message" style="display: none;"></p>
+
+        <div id="output" class="results" style="display: none;"></div>
+    </div>
+
+    <script>
+        // Déclaration des variables
+        var notes = [];
+        let somme = 0;
+        let meilleureNote = 0;
+
+        // Fonction pour ajouter une note
+        function ajouterNote() {
+            const noteInput = document.getElementById("noteInput");
+            const error = document.getElementById("error");
+            const note = parseFloat(noteInput.value);
+
+            // Réinitialiser le message d'erreur
+            error.style.display = "none";
+            error.innerHTML = "";
+
+            // Validation des notes : entre 0 et 20
+            if (note >= 0 && note <= 20) {
+                notes.push(note);
+                somme += note;
+                if (note > meilleureNote) meilleureNote = note;
+
+                // Confirmer l'ajout et réinitialiser l'input
+                noteInput.value = "";
+                noteInput.focus();
+            } else {
+                // Afficher un message d'erreur en rouge
+                error.style.display = "block";
+                error.innerHTML = noteInput.title;
+            }
+        }
+
+        // Fonction pour afficher les résultats
+        function afficherResultats() {
+            const outputDiv = document.getElementById("output");
+
+            if (notes.length === 0) {
+                outputDiv.style.display = "block";
+                outputDiv.innerHTML = `Aucune note saisie.`;
+                return;
+            }
+
+            somme = notes.reduce((somme,val) => somme+val);
+            const moyenne = somme / notes.length;
+            const notesSup12 = notes.filter(x => x >= 12);
+
+            
+
+            // Affichage des résultats
+            outputDiv.style.display = "block";
+            outputDiv.innerHTML = `
+                <p><strong>Nombre de notes :</strong>`+ notes.length + `</p>
+                <p><strong>Moyenne des notes :</strong> ${moyenne.toFixed(2)}</p>
+                <p><strong>Meilleure note :</strong> ${meilleureNote}</p>
+                <p><strong>Notes supérieures ou égales à 12 :</strong> 
+                    ${notesSup12.join(", ") || "Aucune"}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

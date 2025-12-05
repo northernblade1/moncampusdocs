@@ -1,0 +1,45 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #eee;
+}
+
+img {
+    width: 130px;
+}
+
+.container {
+    display: flex;
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    background-color: white;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px gray;
+}
+
+.text {
+    padding: 0;
+    margin: 0;
+    width: 80%;
+    p {
+        color: #474747;
+    }
+}
+
+@media (width < 769px) {
+
+    .container {
+        flex-direction: column;
+    }
+
+    .text {
+        width: 70%;
+        text-align: center;
+    }
+    
+}

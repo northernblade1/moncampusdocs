@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Évaluation des Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .results {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e8f5e9;
+            border-left: 5px solid #4CAF50;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            margin: 10px 0;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Évaluation des Notes</h1>
+    <div class="container">
+        <p>Entrez une note entre 0 et 100 dans le champ ci-dessous, puis cliquez sur "Évaluer".</p>
+        <input type="number" id="noteInput" placeholder="Entrez une note" />
+        <button class="btn" onclick="evaluerNote()">Évaluer</button>
+        <p id="error" class="error-message" style="display: none;"></p>
+
+        <div id="output" class="results" style="display: none;"></div>
+    </div>
+
+    <script>
+        function evaluerNote() {
+            const noteInput = document.getElementById("noteInput");
+            const note = parseFloat(noteInput.value);
+            const error = document.getElementById("error");
+            const outputDiv = document.getElementById("output");
+
+            // Réinitialiser l'affichage des messages
+            error.style.display = "none";
+            error.innerHTML = "";
+            outputDiv.style.display = "none";
+
+            // Validation de la note
+            if (isNaN(note) || note < 0 || note > 100) {
+                error.style.display = "block";
+                error.innerHTML = "Veuillez entrer une note valide entre 0 et 100.";
+                return;
+            }
+
+            // Utilisation de switch(true) pour évaluer la note
+            let message = "";
+            switch (true) {
+                case note >= 90:
+                case note >= 50:
+                    message = "Passable, mais vous pouvez mieux faire.";
+                    break;
+                case note < 50:
+                    message = "Échec, vous devez retravailler vos cours.";
+                    break;
+                default:
+                    message = "Erreur inattendue.";
+            }
+
+            // Afficher le résultat
+            outputDiv.style.display = "block";
+            outputDiv.innerHTML = `<p><strong>Résultat :</strong> ${message}</p>`;
+        }
+    </script>
+</body>
+</html>

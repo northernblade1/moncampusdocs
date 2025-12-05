@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Menu Accordéon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .faq-container {
+            max-width: 600px;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        /* Style des questions */
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .faq-item label {
+            display: block;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #333;
+            position: relative;
+        }
+
+        /* Icône d’indicateur pour ouverture/fermeture */
+        .faq-item label::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            font-size: 24px;
+            color: #555;
+            transition: transform 0.3s ease;
+        }
+
+        /* Cacher les cases à cocher */
+        .faq-item input {
+            display: none;
+        }
+
+        /* Style des réponses */
+        .faq-item .answer {
+            max-height: 0;
+            overflow: hidden;
+            background-color: #f9f9f9;
+            padding: 0 20px;
+            transition: max-height 0.4s ease;
+        }
+
+        .faq-item .answer p {
+            padding: 15px 0;
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Montrer la réponse lorsque l'input est coché */
+        .faq-item input:checked ~ .answer {
+            max-height: 200px; /* ou plus grand selon le contenu */
+        }
+
+        /* Modifier l'icône lorsque l'input est coché */
+        .faq-item input:checked + label::after {
+            content: '-';
+            transform: rotate(180deg);
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="faq-container">
+    <div class="faq-item">
+        <input type="checkbox" id="faq1">
+        <label for="faq1">Question 1 : Qu'est-ce qu'un accordéon en CSS ?</label>
+        <div class="answer">
+            <p>Un accordéon en CSS est un effet de présentation où les réponses aux questions apparaissent et disparaissent en cliquant sur les titres des questions.</p>
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <input type="checkbox" id="faq2">
+        <label for="faq2">Question 2 : Puis-je créer un accordéon sans JavaScript ?</label>
+        <div class="answer">
+            <p>Oui, en utilisant des cases à cocher et le sélecteur `:checked`, vous pouvez créer un accordéon entièrement en HTML et CSS.</p>
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <input type="checkbox" id="faq3">
+        <label for="faq3">Question 3 : Comment styliser mon accordéon ?</label>
+        <div class="answer">
+            <p>Vous pouvez utiliser les transitions et ajouter des icônes pour les états ouvert/fermé pour rendre l'accordéon plus agréable visuellement.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

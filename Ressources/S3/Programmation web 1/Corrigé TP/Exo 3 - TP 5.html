@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des étudiants</title>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header img {
+            max-width: 150px;
+            height: auto;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table thead {
+            background-color: #007bff;
+            color: white;
+        }
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        table th {
+            font-weight: bold;
+        }
+        table td {
+            font-size: 1rem;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/logo.jpg" alt="Logo de mon blog" width="10%">
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="ajouter.html">Ajouter un étudiant</a></li>
+                <li><a href="liste.html">Liste des étudiants</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Âge</th>
+                        <th>Classe</th>
+                        <th>Date d'inscription</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Test nom1</td>
+                        <td>Test prenom1</td>
+                        <td>20</td>
+                        <td>Informatique 1ère année</td>
+                        <td>2024-09-25</td>
+                    </tr>
+                    <tr>
+                        <td>Test nom2</td>
+                        <td>Test prenom2</td>
+                        <td>22</td>
+                        <td>Mathématiques 2ème année</td>
+                        <td>2024-09-22</td>
+                    </tr>
+                    <tr>
+                        <td>Test nom3</td>
+                        <td>Test prenom3</td>
+                        <td>21</td>
+                        <td>Physique 1ère année</td>
+                        <td>2024-09-20</td>
+                    </tr>
+                    <tr>
+                        <td>Test nom3</td>
+                        <td>Test prenom3</td>
+                        <td>21</td>
+                        <td>Physique 1ère année</td>
+                        <td>2024-09-20</td>
+                    </tr>
+                    <tr>
+                        <td>Test nom3</td>
+                        <td>Test prenom3</td>
+                        <td>21</td>
+                        <td>Physique 1ère année</td>
+                        <td>2024-09-20</td>
+                    </tr>
+                    <!-- Ajouter d'autres étudiants ici -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 - Gestion des étudiants</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline de Contenu</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            padding: 50px 0;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Ligne centrale */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #555;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Container des événements */
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 20px 40px;
+            box-sizing: border-box;
+        }
+
+        /* Positionnement à gauche et à droite */
+        .timeline-item.left {
+            left: 0;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        /* Style des contenus */
+        .timeline-item .content {
+            padding: 20px;
+            background-color: #fff;
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Positionnement du point sur la ligne */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #555;
+            border-radius: 50%;
+            top: 20px;
+            right: -10px;
+        }
+
+        .timeline-item.left::before {
+            right: auto;
+            left: -10px;
+        }
+
+        /* Responsive */
+        /*@media screen and (max-width: 768px) {
+            .timeline-item {
+                width: 100%;
+                left: 0;
+                padding: 20px;
+            }
+
+            .timeline-item::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .timeline-item.left, .timeline-item.right {
+                left: 0;
+            }
+        }*/
+    </style>
+</head>
+<body>
+
+<div class="timeline">
+    <div class="timeline-item left">
+        <div class="content">
+            <h2>Événement 1</h2>
+            <p>Description de l'événement 1. Cette section contient les détails et informations importantes.</p>
+        </div>
+    </div>
+    <div class="timeline-item right">
+        <div class="content">
+            <h2>Événement 2</h2>
+            <p>Description de l'événement 2. Cette section contient les détails et informations importantes.</p>
+        </div>
+    </div>
+    <div class="timeline-item left">
+        <div class="content">
+            <h2>Événement 3</h2>
+            <p>Description de l'événement 3. Cette section contient les détails et informations importantes.</p>
+        </div>
+    </div>
+    <div class="timeline-item right">
+        <div class="content">
+            <h2>Événement 4</h2>
+            <p>Description de l'événement 4. Cette section contient les détails et informations importantes.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
