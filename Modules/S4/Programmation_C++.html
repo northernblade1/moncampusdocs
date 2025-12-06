@@ -1,145 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="../../CSS/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Campus Docs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../../CSS/style.css"> 
+    <script src="../../JS/script.js" defer></script>
 </head>
 <body>
+    
+    <header class="header">
+        <div class="logo">
+            <a href="../../index.html"><img src="../../Icons/book.png" alt="Logo Mon Campus Docs"></a>
+        </div>
+        
+        <nav>
+            <ul class="nav-list">
+                <li><a href="../../index.html">ACCUEIL</a></li>
+                <li id="li1">
+                    <a href="../../index.html#content">MIP</a>
+                    <ul id="ul1" class="dropdown">
+                        <a href="../../Filières/FilièreMipS1.html"><li class="cs"><div class="s">S1</div></li></a>
+                        <a href="../../Filières/FilièreMipS2.html"><li class="cs"><div class="s">S2</div></li></a>
+                    </ul>
+                </li>
+                
+                <li id="li2">
+                    <a href="../../index.html#content">INFO</a>
+                    <ul id="ul2" class="dropdown">
+                        <a href="../../Filières/FilièreInfoS3.html"><li class="cs"><div class="s">S3</div></li></a>
+                        <a href="../../Filières/FilièreInfoS4.html"><li class="cs"><div class="s">S4</div></li></a>
+                    </ul>
+                </li>
+                <li><a href="../../index.html#team">TEAM</a></li>
+            </ul>
+        </nav>
+
+        <div class="con_butt">
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">
+                <svg id="moon-icon" viewBox="0 0 64 64" fill="currentColor">
+                    <path d="M12.001,31.997c0-2.211-1.789-4-4-4H4c-2.211,0-4,1.789-4,4 s1.789,4,4,4h4C10.212,35.997,12.001,34.208,12.001,31.997z"></path>
+                    <path d="M12.204,46.139l-2.832,2.833c-1.563,1.562-1.563,4.094,0,5.656 c1.562,1.562,4.094,1.562,5.657,0l2.833-2.832c1.562-1.562,1.562-4.095,0-5.657C16.298,44.576,13.767,44.576,12.204,46.139z"></path>
+                    <path d="M32.003,51.999c-2.211,0-4,1.789-4,4V60c0,2.211,1.789,4,4,4 s4-1.789,4-4l-0.004-4.001C36.003,53.788,34.21,51.999,32.003,51.999z"></path>
+                    <path d="M51.798,46.143c-1.559-1.566-4.091-1.566-5.653-0.004 s-1.562,4.095,0,5.657l2.829,2.828c1.562,1.57,4.094,1.562,5.656,0s1.566-4.09,0-5.656L51.798,46.143z"></path>
+                    <path d="M60.006,27.997l-4.009,0.008 c-2.203-0.008-3.992,1.781-3.992,3.992c-0.008,2.211,1.789,4,3.992,4h4.001c2.219,0.008,4-1.789,4-4 C64.002,29.79,62.217,27.997,60.006,27.997z"></path>
+                    <path d="M51.798,17.859l2.828-2.829c1.574-1.566,1.562-4.094,0-5.657 c-1.559-1.567-4.09-1.567-5.652-0.004l-2.829,2.836c-1.562,1.555-1.562,4.086,0,5.649C47.699,19.426,50.239,19.418,51.798,17.859z"></path>
+                    <path d="M32.003,11.995c2.207,0.016,4-1.789,4-3.992v-4 c0-2.219-1.789-4-4-4c-2.211-0.008-4,1.781-4,3.993l0.008,4.008C28.003,10.206,29.792,11.995,32.003,11.995z"></path>
+                    <path d="M12.212,17.855c1.555,1.562,4.079,1.562,5.646-0.004 c1.574-1.551,1.566-4.09,0.008-5.649l-2.829-2.828c-1.57-1.571-4.094-1.559-5.657,0c-1.575,1.559-1.575,4.09-0.012,5.653 L12.212,17.855z"></path>
+                    <circle cx="32.003" cy="32.005" r="16.001"></circle>
+                </svg>
+                <svg id="sun-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 11.5373 21.3065 11.4608 21.0672 11.8568C19.9289 13.7406 17.8615 15 15.5 15C11.9101 15 9 12.0899 9 8.5C9 6.13845 10.2594 4.07105 12.1432 2.93276C12.5392 2.69347 12.4627 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="currentColor"></path>
+                </svg> 
+            </button>
+        </div>
+    </header>
 
     <main>
         <div class="container">
-
             <div class="section-header">
                 <h1>Programmation C++</h1>
-                <p>Veuillez accéder au contenu souhaitez</p>
+                <p>Veuillez accéder au contenu souhaité</p>
             </div>
 
             <section id="cours">
                 <div class="cour"><h2>Cours</h2></div>
-                    <div class="grid">
+                <div class="grid">
+                    <div class="chapitre"><div class="filiere-content"><p class="filiere-title">Chapitre 1</p></div><a class="chapitre-overlay" href="">Ouvrir</a></div>
+                    <div class="chapitre"><div class="filiere-content"><p class="filiere-title">Chapitre 2</p></div><a class="chapitre-overlay" href="">Ouvrir</a></div>
+                    <div class="chapitre"><div class="filiere-content"><p class="filiere-title">Chapitre 3</p></div><a class="chapitre-overlay" href="">Ouvrir</a></div>
+                    <div class="chapitre"><div class="filiere-content"><p class="filiere-title">Chapitre 4</p></div><a class="chapitre-overlay" href="">Ouvrir</a></div>
 
-                        <div class="chapitre">
-                            <div class="filiere-content">
-                                <p class="filiere-title">Chapitre 1</p>
-                            </div>
-                            <a class="chapitre-overlay" href="Chapitre  1.pdf">Chapitre 1</a>
-                        </div>
-
-                        <div class="chapitre">
-                            <div class="filiere-content">
-                                <p class="filiere-title">Chapitre 2</p>
-                            </div>
-                            <a class="chapitre-overlay" href="Chapitre  1.pdf">Chapitre 2</a>
-                        </div>
-
-                        <div class="chapitre">
-                            <div class="filiere-content">
-                                <p class="filiere-title">Chapitre 2</p>
-                            </div>
-                            <a class="chapitre-overlay" href="Chapitre  1.pdf">Chapitre 2</a>
-                        </div>
-
-                        <div class="chapitre">
-                            <div class="filiere-content">
-                                <p class="filiere-title">Chapitre 2</p>
-                            </div>
-                            <a class="chapitre-overlay" href="Chapitre  1.pdf">Chapitre 2</a>
-                        </div>
-
-                        <div class="chapitre">
-                            <div class="filiere-content">
-                                <p class="filiere-title">Chapitre 2</p>
-                            </div>
-                            <a class="chapitre-overlay" href="Chapitre  1.pdf">Chapitre 2</a>
-                        </div>
-
-                        <div class="chapitre">
-                            <div class="filiere-content">
-                                <p class="filiere-title">Chapitre 2</p>
-                            </div>
-                            <a class="chapitre-overlay" href="Chapitre  1.pdf">Chapitre 2</a>
-                        </div>
-
-                        <div class="chapitre">
-                            <div class="filiere-content">
-                                <p class="filiere-title">Chapitre 2</p>
-                            </div>
-                            <a class="chapitre-overlay" href="Chapitre  1.pdf">Chapitre 2</a>
-                        </div>
-                    </div>
-            </section>  
+                </div>
+            </section>
 
             <section id="tds">
                 <div class="td"><h2>Travaux dirigés</h2></div>
-                    <div class="grid">
+                <div class="grid">
+                    <div class="chapitre"><div class="filiere-content"><p class="filiere-title">TD 1</p></div><a class="TD-overlay" href="">Ouvrir</a></div>
+                    <div class="chapitre"><div class="filiere-content"><p class="filiere-title">TD 2</p></div><a class="TD-overlay" href="">Ouvrir</a></div>
+                </div>
+            </section>
 
-                        <div class="chapitre">
-                            <div class="filiere-content">
-                                <p class="filiere-title">TD 1</p>
-                            </div>
-                            <a class="TD-overlay" href="">TD 1</a>
-                        </div>
-
-                        <div class="chapitre">
-                            <div class="filiere-content">
-                                <p class="filiere-title">TD 2</p>
-                            </div>
-                            <a class="TD-overlay" href="">TD 2</a>
-                        </div>
-
-                        <div class="chapitre">
-                            <div class="filiere-content">
-                                <p class="filiere-title">TD 3</p>
-                            </div>
-                            <a class="TD-overlay" href="">TD 3</a>
-                        </div>
-
-                        <div class="chapitre">
-                            <div class="filiere-content">
-                                <p class="filiere-title">TD 4</p>
-                            </div>
-                            <a class="TD-overlay" href="">TD 4</a>
-                        </div>
-                    </div>
+            <section id="tds">
+                <div class="tp"><h2>Travaux pratiques</h2></div>
+                <div class="grid">
+                    <div class="chapitre"><div class="filiere-content"><p class="filiere-title">TP 1</p></div><a class="TP-overlay" href="">Ouvrir</a></div>
+                    <div class="chapitre"><div class="filiere-content"><p class="filiere-title">TP 2</p></div><a class="TP-overlay" href="">Ouvrir</a></div>
+                    <div class="chapitre"><div class="filiere-content"><p class="filiere-title">TP 3</p></div><a class="TP-overlay" href="">Ouvrir</a></div>
+                </div>
             </section>
 
             <section id="exams">
                 <div class="exam"><h2>Exams</h2></div>
-                    <div class="grid">
-
-                        <div class="chapitre">
-                            <div class="filiere-content">
-                                <p class="filiere-title">exam</p>
-                            </div>
-                            <a class="exam-overlay" href="">exam</a>
-                        </div>
-
-                        <div class="chapitre">
-                            <div class="filiere-content">
-                                <p class="filiere-title">exam</p>
-                            </div>
-                            <a class="exam-overlay" href="">exam</a>
-                        </div>
-
-                        <div class="chapitre">
-                            <div class="filiere-content">
-                                <p class="filiere-title">exam</p>
-                            </div>
-                            <a class="exam-overlay" href="">exam</a>
-                        </div>
-
-                        <div class="chapitre">
-                            <div class="filiere-content">
-                                <p class="filiere-title">exam</p>
-                            </div>
-                            <a class="exam-overlay" href="">exam</a>
-                        </div>
-                    </div>
+                <div class="grid">
+                    <div class="chapitre"><div class="filiere-content"><p class="filiere-title">Exam 1</p></div><a class="exam-overlay" href="">Ouvrir</a></div>
+                    <div class="chapitre"><div class="filiere-content"><p class="filiere-title">Exam 2</p></div><a class="exam-overlay" href="">Ouvrir</a></div>
+                </div>
             </section>
-
         </div>
     </main>
+
+    <button id="btn-top" aria-label="Retour en haut">
+        <img src="../../Icons/up-arrow.png" alt="Top" class="img_top">
+    </button>
+
+    <footer>
+        <div class="l1">
+            <div class="about">
+                <h1>À propos</h1>
+                <p>MyCampusDocs est une plateforme web que nous avons imaginée pour aider les étudiants à retrouver facilement leurs cours, TD, TP et examens, sans avoir à chercher partout.</p>
+                <div class="icons">
+                     <a href="https://www.instagram.com/mon_campus_docs?igsh=MnZiYjh4bGx2Nnp0" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                     <a href="https://www.linkedin.com/in/moncampus-docs-2280a43a0?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                     <a href="moncampus@gmail.com" target="_blank"><i class="fa-regular fa-envelope"></i></a>
+                     <a href="https://wa.me/message/JIJ62PJLB4W4L1" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="contact">
+                <h1>Contact</h1>
+                <div class="ligne">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <p>Quartier Guéliz - Marrakech</p>
+                </div>
+                <div class="ligne">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <p>moncampus@gmail.com</p>
+                </div>
+                <div class="ligne">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <p>+212 775 231 702</p>
+                </div>
+            </div>
+        </div>
+        <div class="copyright"><p>MonCampusDocs &copy; 2025 Copyright</p></div>
+    </footer>
 
 </body>
 </html>
